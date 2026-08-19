@@ -127,6 +127,32 @@
         </div>
     </section>
 
+    <!-- Technical Logic Section -->
+    <section id="technical" class="py-20 bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 id="tech-title" class="text-3xl font-bold text-center mb-10">Advanced Filter Logic</h2>
+            <div class="bg-gray-800 rounded-xl p-8 shadow-lg text-gray-300 space-y-6">
+                <p id="tech-desc-1">We don't just copy numbers blindly. <strong>RewDspAssistant.Desktop</strong> translates REW's raw mathematical data into precise Q factors tailored to the DSP environment:</p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li id="tech-li-1"><strong>High Shelf (HS) & Low Shelf (LS):</strong> The Q is dynamically calculated based on the REW default Slope (S=0.9) and the exported Gain, guaranteeing an exact curve match.</li>
+                    <li id="tech-li-2"><strong>High Pass (HP) & Low Pass (LP):</strong> The software forces the mathematically correct Q value based on your selected Crossover Alignment (e.g., Butterworth = 0.7071, Linkwitz-Riley = 0.50, Bessel = 0.5774).</li>
+                    <li id="tech-li-3"><strong>Peak Filters (PK):</strong> Q and Gain parameters are perfectly retained and formatted according to your chosen DSP Profile.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Profile Section -->
+    <section id="community" class="py-20 bg-[#0F172A]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 id="community-title" class="text-3xl font-bold mb-6">Need a Profile for your DSP?</h2>
+            <p id="community-desc" class="text-gray-400 mb-10 max-w-2xl mx-auto">We are constantly adding new DSP integration profiles. If you have a specific Automotive or Home DSP that isn't supported yet, let us know on GitHub!</p>
+            <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop/issues/new?title=DSP+Profile+Request:+[BRAND]+[MODEL]" target="_blank" class="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white font-bold py-3 px-6 rounded-lg transition">
+                <i class="fa-brands fa-github text-xl"></i> <span id="btn-request">Request a new DSP Profile</span>
+            </a>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="border-t border-gray-800 py-10 mt-10">
         <div class="container mx-auto px-6 text-center text-gray-500">
@@ -162,7 +188,15 @@
                 "f3_title": "Multi-Platform DSPs",
                 "f3_desc": "Designed to bridge the gap for popular automotive and home DSP platforms. Open architecture for profiles.",
                 "created_by": "Created by",
-                "license": "Licensed under MIT License. Not affiliated with Room EQ Wizard."
+                "license": "Licensed under MIT License. Not affiliated with Room EQ Wizard.",
+                "tech_title": "Advanced Filter Logic",
+                "tech_desc": "We don't just copy numbers blindly. <strong>RewDspAssistant.Desktop</strong> translates REW's raw mathematical data into precise Q factors tailored to the DSP environment:",
+                "tech_li1": "<strong>High Shelf (HS) & Low Shelf (LS):</strong> The Q is dynamically calculated based on the REW default Slope (S=0.9) and the exported Gain, guaranteeing an exact curve match.",
+                "tech_li2": "<strong>High Pass (HP) & Low Pass (LP):</strong> The software forces the mathematically correct Q value based on your selected Crossover Alignment (e.g., Butterworth = 0.7071, Linkwitz-Riley = 0.50).",
+                "tech_li3": "<strong>Peak Filters (PK):</strong> Q and Gain parameters are perfectly retained and formatted according to your chosen DSP Profile.",
+                "community_title": "Need a Profile for your DSP?",
+                "community_desc": "We are constantly adding new DSP integration profiles. If you have a specific Automotive or Home DSP that isn't supported yet, let us know on GitHub!",
+                "btn_request": "Request a new DSP Profile"
             },
             "pt": {
                 "title": "RewDspAssistant.Desktop | Copie e Cole EQs para o seu DSP",
@@ -185,7 +219,15 @@
                 "f3_title": "DSPs Multi-Plataforma",
                 "f3_desc": "Projetado para preencher a lacuna dos populares DSPs automotivos e residenciais. Arquitetura aberta para criar perfis.",
                 "created_by": "Criado por",
-                "license": "Licenciado sob MIT License. Não afiliado ao Room EQ Wizard."
+                "license": "Licenciado sob MIT License. Não afiliado ao Room EQ Wizard.",
+                "tech_title": "Lógica Avançada de Filtros",
+                "tech_desc": "Nós não apenas copiamos números cegamente. O <strong>RewDspAssistant.Desktop</strong> traduz os dados matemáticos brutos do REW em fatores Q precisos adaptados ao seu DSP:",
+                "tech_li1": "<strong>High Shelf (HS) e Low Shelf (LS):</strong> O Q é calculado dinamicamente com base no Slope padrão do REW (S=0.9) e no Ganho exportado, garantindo uma correspondência exata da curva.",
+                "tech_li2": "<strong>High Pass (HP) e Low Pass (LP):</strong> O software força o valor Q matematicamente correto com base no alinhamento de Crossover selecionado (ex: Butterworth = 0.7071).",
+                "tech_li3": "<strong>Filtros Peak (PK):</strong> Os parâmetros Q e Ganho são perfeitamente retidos e formatados de acordo com o perfil do DSP escolhido.",
+                "community_title": "Precisa de um Perfil para o seu DSP?",
+                "community_desc": "Estamos constantemente adicionando novos perfis de integração. Se você tem um DSP específico que ainda não é suportado, avise-nos no GitHub!",
+                "btn_request": "Solicitar novo Perfil de DSP"
             },
             "es": {
                 "title": "RewDspAssistant.Desktop | Copia/Pega ajustes de EQ a tu DSP",
@@ -208,7 +250,15 @@
                 "f3_title": "DSPs Multi-Plataforma",
                 "f3_desc": "Diseñado para los DSPs automotrices y de hogar más populares. Arquitectura abierta para perfiles.",
                 "created_by": "Creado por",
-                "license": "Bajo Licencia MIT. No afiliado con Room EQ Wizard."
+                "license": "Bajo Licencia MIT. No afiliado con Room EQ Wizard.",
+                "tech_title": "Lógica Avanzada de Filtros",
+                "tech_desc": "No solo copiamos números a ciegas. <strong>RewDspAssistant.Desktop</strong> traduce los datos matemáticos puros de REW en factores Q precisos para tu DSP:",
+                "tech_li1": "<strong>High Shelf (HS) y Low Shelf (LS):</strong> El factor Q se calcula dinámicamente según la pendiente por defecto de REW (S=0.9) y la Ganancia exportada, asegurando la misma curva.",
+                "tech_li2": "<strong>High Pass (HP) y Low Pass (LP):</strong> El software aplica el valor Q matemáticamente correcto según la alineación de Crossover elegida (ej. Butterworth = 0.7071).",
+                "tech_li3": "<strong>Filtros Peak (PK):</strong> Los parámetros Q y Ganancia se mantienen y formatean perfectamente según el perfil de DSP elegido.",
+                "community_title": "¿Necesitas un Perfil para tu DSP?",
+                "community_desc": "Estamos añadiendo constantemente nuevos perfiles. Si tienes un DSP específico que aún no es compatible, ¡avísanos en GitHub!",
+                "btn_request": "Solicitar nuevo Perfil de DSP"
             }
         };
 
@@ -241,6 +291,16 @@
             document.getElementById("f2-desc").innerText = t.f2_desc;
             document.getElementById("f3-title").innerText = t.f3_title;
             document.getElementById("f3-desc").innerText = t.f3_desc;
+            
+            document.getElementById("tech-title").innerText = t.tech_title;
+            document.getElementById("tech-desc-1").innerHTML = t.tech_desc;
+            document.getElementById("tech-li-1").innerHTML = t.tech_li1;
+            document.getElementById("tech-li-2").innerHTML = t.tech_li2;
+            document.getElementById("tech-li-3").innerHTML = t.tech_li3;
+            
+            document.getElementById("community-title").innerText = t.community_title;
+            document.getElementById("community-desc").innerText = t.community_desc;
+            document.getElementById("btn-request").innerText = t.btn_request;
             
             document.getElementById("created-by").innerText = t.created_by;
             document.getElementById("license-text").innerText = t.license;
