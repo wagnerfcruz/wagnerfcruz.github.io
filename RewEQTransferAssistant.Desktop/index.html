@@ -101,6 +101,14 @@
         </div>
     </section>
 
+    <!-- Time Savings Banner -->
+    <section class="bg-blue-600 bg-opacity-10 border-y border-blue-900/50 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 id="time-saved-title" class="text-3xl md:text-4xl font-extrabold text-blue-100 mb-3">Transform 1 to 2 hours of typing into just 2 minutes.</h2>
+            <p id="time-saved-desc" class="text-xl text-blue-300 max-w-3xl mx-auto">Stop wasting time manually copying 70+ EQ bands for a multi-channel system.</p>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section id="features" class="bg-gray-900 py-20">
         <div class="container mx-auto px-6">
@@ -229,6 +237,8 @@
                 "f3_desc": "Designed to bridge the gap for popular automotive and home DSP platforms. Open architecture for profiles.",
                 "created_by": "Created by",
                 "license": "Licensed under MIT License. Not affiliated with Room EQ Wizard.",
+                "time_saved_title": "Transform 1 to 2 hours of typing into just 2 minutes.",
+                "time_saved_desc": "Stop wasting time manually copying 70+ EQ bands for a multi-channel system.",
                 "supported_title": "Supported DSPs",
                 "supported_desc": "Works seamlessly with top-tier Automotive and Home Audio DSP manufacturers. With 30+ native profiles and growing.",
                 "supported_generic": "And many others using the Generic Data Profile (Freq-Q-Gain via Keyboard Nav)",
@@ -264,6 +274,8 @@
                 "f3_desc": "Projetado para preencher a lacuna dos populares DSPs automotivos e residenciais. Arquitetura aberta para criar perfis.",
                 "created_by": "Criado por",
                 "license": "Licenciado sob MIT License. Não afiliado ao Room EQ Wizard.",
+                "time_saved_title": "Transforme 1 a 2 horas de digitação em apenas 2 minutos.",
+                "time_saved_desc": "Pare de perder tempo copiando manualmente mais de 70 bandas de EQ em um sistema de múltiplos canais.",
                 "supported_title": "DSPs Suportados",
                 "supported_desc": "Funciona perfeitamente com os principais fabricantes de DSP automotivo e residencial. Mais de 30 perfis nativos e crescendo.",
                 "supported_generic": "E muitos outros usando o Perfil de Dados Genérico (Freq-Q-Gain via Navegação por Teclado)",
@@ -299,6 +311,8 @@
                 "f3_desc": "Diseñado para los DSPs automotrices y de hogar más populares. Arquitectura abierta para perfiles.",
                 "created_by": "Creado por",
                 "license": "Bajo Licencia MIT. No afiliado con Room EQ Wizard.",
+                "time_saved_title": "Transforma de 1 a 2 horas de escritura en solo 2 minutos.",
+                "time_saved_desc": "Deja de perder tiempo copiando manualmente más de 70 bandas de EQ en un sistema multicanal.",
                 "supported_title": "DSPs Compatibles",
                 "supported_desc": "Funciona perfectamente con los principales fabricantes de DSP de automóvil y hogar. Más de 30 perfiles nativos y creciendo.",
                 "supported_generic": "Y muchos otros usando el Perfil de Datos Genérico (Freq-Q-Gain vía Navegación por Teclado)",
@@ -342,6 +356,9 @@
             document.getElementById("f2-desc").innerText = t.f2_desc;
             document.getElementById("f3-title").innerText = t.f3_title;
             document.getElementById("f3-desc").innerText = t.f3_desc;
+            
+            document.getElementById("time-saved-title").innerText = t.time_saved_title;
+            document.getElementById("time-saved-desc").innerText = t.time_saved_desc;
             
             document.getElementById("supported-title").innerText = t.supported_title;
             document.getElementById("supported-desc").innerText = t.supported_desc;
