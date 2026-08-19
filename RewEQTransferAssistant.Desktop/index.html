@@ -66,6 +66,9 @@
 
     <!-- Hero Section -->
     <section class="container mx-auto px-6 py-20 text-center">
+        <div class="inline-block bg-blue-900 bg-opacity-30 border border-blue-500 text-blue-300 rounded-full px-5 py-2 mb-8 text-sm font-semibold tracking-wide shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+            <i class="fa-solid fa-plug-circle-bolt mr-2"></i> <span id="hero-badge">Direct REW API Integration</span>
+        </div>
         <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
             <span id="hero-t1">Stop Typing EQs Manually.<br></span>
             <span id="hero-t2" class="gradient-text">Copy and Paste.</span>
@@ -207,6 +210,7 @@
                 "title": "RewDspAssistant.Desktop | Copy/Paste EQ settings to your DSP",
                 "desc": "Automate and integrate Room EQ Wizard (REW) with Car Audio and Home DSPs. Transfer EQ settings with a single click.",
                 "features": "Features",
+                "hero_badge": "Direct REW API Integration",
                 "hero_title_1": "Stop Typing EQs Manually.",
                 "hero_title_2": "Copy and Paste.",
                 "hero_desc": "The ultimate automation tool to bridge Room EQ Wizard (REW) with Automotive and Home Audio DSPs. Transfer your tuning settings with a single click.",
@@ -241,6 +245,7 @@
                 "title": "RewDspAssistant.Desktop | Copie e Cole EQs para o seu DSP",
                 "desc": "Automatize e integre o Room EQ Wizard (REW) com DSPs Automotivos e Residenciais. Transfira equalizações com um clique.",
                 "features": "Recursos",
+                "hero_badge": "Integração Direta com a API do REW",
                 "hero_title_1": "Pare de digitar EQs manualmente.",
                 "hero_title_2": "Apenas Copie e Cole.",
                 "hero_desc": "A ferramenta de automação definitiva para integrar o Room EQ Wizard (REW) com DSPs automotivos e residenciais. Transfira seu ajuste com um único clique.",
@@ -275,6 +280,7 @@
                 "title": "RewDspAssistant.Desktop | Copia/Pega ajustes de EQ a tu DSP",
                 "desc": "Automatiza e integra Room EQ Wizard (REW) con DSP de Car Audio y Hogar. Transfiere ajustes con un clic.",
                 "features": "Características",
+                "hero_badge": "Integración Directa con la API de REW",
                 "hero_title_1": "Deja de escribir EQs manualmente.",
                 "hero_title_2": "Copia y Pega.",
                 "hero_desc": "La herramienta de automatización definitiva para conectar Room EQ Wizard (REW) con DSPs automotrices y de hogar. Transfiere tu ajuste con un solo clic.",
@@ -316,6 +322,7 @@
             document.documentElement.lang = lang;
             
             document.getElementById("nav-features").innerText = t.features;
+            document.getElementById("hero-badge").innerText = t.hero_badge;
             document.getElementById("hero-t1").innerHTML = t.hero_title_1 + "<br>";
             document.getElementById("hero-t2").innerText = t.hero_title_2;
             document.getElementById("hero-desc").innerText = t.hero_desc;
