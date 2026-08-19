@@ -54,7 +54,12 @@
             </div>
             <nav class="hidden md:flex gap-6 items-center">
                 <a href="#features" id="nav-features" class="hover:text-blue-400 transition">Features</a>
-                <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="https://github.com/wagnerfcruz/wagnerfcruz.github.io" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-github text-xl"></i></a>
+                <div class="flex gap-3 ml-4 border-l border-gray-700 pl-4">
+                    <button onclick="setLanguage('en')" class="hover:opacity-80 transition" title="English">🇺🇸</button>
+                    <button onclick="setLanguage('pt')" class="hover:opacity-80 transition" title="Português">🇧🇷</button>
+                    <button onclick="setLanguage('es')" class="hover:opacity-80 transition" title="Español">🇪🇸</button>
+                </div>
             </nav>
         </div>
     </header>
@@ -71,12 +76,12 @@
         
         <div class="flex flex-col sm:flex-row justify-center gap-4">
             <!-- Download Button Light -->
-            <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop/releases/download/latest/RewEQTransferAssistant-Light.zip" class="btn-primary text-white font-bold py-4 px-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
+            <a href="https://github.com/wagnerfcruz/wagnerfcruz.github.io/releases/latest/download/RewEQTransferAssistant-Light.zip" class="btn-primary text-white font-bold py-4 px-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
                 <div class="flex items-center gap-2 text-lg"><i class="fa-solid fa-download"></i> <span id="btn-dl-light">Download Light (~15MB)</span></div>
                 <span id="btn-dl-light-sub" class="text-xs text-blue-200 mt-1">Requires .NET 8</span>
             </a>
             <!-- Download Button Full -->
-            <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop/releases/download/latest/RewEQTransferAssistant-Full.zip" class="btn-primary text-white font-bold py-4 px-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
+            <a href="https://github.com/wagnerfcruz/wagnerfcruz.github.io/releases/latest/download/RewEQTransferAssistant-Full.zip" class="btn-primary text-white font-bold py-4 px-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
                 <div class="flex items-center gap-2 text-lg"><i class="fa-solid fa-download"></i> <span id="btn-dl-full">Download Full (~70MB)</span></div>
                 <span id="btn-dl-full-sub" class="text-xs text-blue-200 mt-1">Standalone (No installation)</span>
             </a>
@@ -85,7 +90,7 @@
                 <span id="btn-support-text">☕ Support the Project 💲</span>
             </a>
         </div>
-        <p id="req-text" class="mt-4 text-sm text-gray-500">Version 1.1.0 • Requires Windows 10/11</p>
+        <p id="req-text" class="mt-6 text-sm text-gray-400 font-medium">✅ Windows 10/11 • 🖥️ Any DPI Scaling Supported • 🌐 EN, PT-BR, ES</p>
         
         <!-- Mockup Image / Preview -->
         <div class="mt-16 mx-auto max-w-4xl rounded-xl overflow-hidden shadow-2xl border border-gray-700">
@@ -135,7 +140,7 @@
                 <p id="tech-desc-1">We don't just copy numbers blindly. <strong>RewDspAssistant.Desktop</strong> translates REW's raw mathematical data into precise Q factors tailored to the DSP environment:</p>
                 <ul class="list-disc pl-6 space-y-3">
                     <li id="tech-li-1"><strong>High Shelf (HS) & Low Shelf (LS):</strong> The Q is dynamically calculated based on the REW default Slope (S=0.9) and the exported Gain, guaranteeing an exact curve match.</li>
-                    <li id="tech-li-2"><strong>High Pass (HP) & Low Pass (LP):</strong> The software forces the mathematically correct Q value based on your selected Crossover Alignment (e.g., Butterworth = 0.7071, Linkwitz-Riley = 0.50, Bessel = 0.5774).</li>
+                    <li id="tech-li-2"><strong>High Pass (HP) & Low Pass (LP):</strong> The software forces the mathematically correct Q value based on your selected Crossover Alignment (e.g., Butterworth = 0.7071, Linkwitz-Riley = 0.50).</li>
                     <li id="tech-li-3"><strong>Peak Filters (PK):</strong> Q and Gain parameters are perfectly retained and formatted according to your chosen DSP Profile.</li>
                 </ul>
             </div>
@@ -158,7 +163,7 @@
         <div class="container mx-auto px-6 text-center text-gray-500">
             <p class="mb-4"><span id="created-by">Created by</span> <strong>Wagner Cruz</strong></p>
             <div class="flex justify-center gap-6 text-xl mb-4">
-                <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/wagnerfcruz/wagnerfcruz.github.io" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
             </div>
             <p id="license-text" class="text-sm">Licensed under MIT License. Not affiliated with Room EQ Wizard.</p>
         </div>
@@ -179,7 +184,7 @@
                 "dl_full": "Download Full (~70MB)",
                 "dl_full_sub": "Standalone (No installation)",
                 "support_btn": "☕ Support the Project 💲",
-                "req_text": "Version 1.1.0 • Windows 10/11",
+                "req_text": "✅ Windows 10/11 • 🖥️ Any DPI Scaling Supported • 🌐 EN, PT-BR, ES",
                 "features_title": "Why use RewDspAssistant.Desktop?",
                 "f1_title": "Lightning Fast",
                 "f1_desc": "No more manually typing Frequency, Q, and Gain values. Transfer up to 30 bands instantly via API or Clipboard.",
@@ -210,7 +215,7 @@
                 "dl_full": "Baixar Completo (~70MB)",
                 "dl_full_sub": "Independente (Não requer instalar)",
                 "support_btn": "☕ Apoie o Projeto 💲",
-                "req_text": "Versão 1.1.0 • Windows 10/11",
+                "req_text": "✅ Windows 10/11 • 🖥️ Suporta qualquer escala/DPI • 🌐 PT-BR, EN, ES",
                 "features_title": "Por que usar o RewDspAssistant.Desktop?",
                 "f1_title": "Extremamente Rápido",
                 "f1_desc": "Chega de digitar Frequência, Q e Ganho manualmente. Transfira até 30 bandas instantaneamente via API ou Área de Transferência.",
@@ -241,7 +246,7 @@
                 "dl_full": "Descarga Completa (~70MB)",
                 "dl_full_sub": "Independiente (Sin instalación)",
                 "support_btn": "☕ Apoya el Proyecto 💲",
-                "req_text": "Versión 1.1.0 • Windows 10/11",
+                "req_text": "✅ Windows 10/11 • 🖥️ Soporta cualquier escala/DPI • 🌐 ES, EN, PT",
                 "features_title": "¿Por qué usar RewDspAssistant.Desktop?",
                 "f1_title": "Súper Rápido",
                 "f1_desc": "No más teclear Frecuencia, Q y Ganancia. Transfiere hasta 30 bandas al instante vía API o Portapapeles.",
@@ -263,7 +268,6 @@
         };
 
         function setLanguage(lang) {
-            // Fallback to English if language is not supported
             if (!translations[lang]) lang = "en";
             const t = translations[lang];
             
@@ -306,10 +310,13 @@
             document.getElementById("license-text").innerText = t.license;
         }
 
-        // Auto-detect browser language
         window.onload = () => {
-            let userLang = navigator.language || navigator.userLanguage;
-            userLang = userLang.split('-')[0]; // Get the base language (pt-BR -> pt)
+            let userLang = 'en';
+            if (navigator.languages && navigator.languages.length) {
+                userLang = navigator.languages[0].split('-')[0];
+            } else {
+                userLang = (navigator.language || navigator.userLanguage).split('-')[0];
+            }
             setLanguage(userLang);
         };
     </script>
