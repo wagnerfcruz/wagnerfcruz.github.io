@@ -70,12 +70,18 @@
         </p>
         
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <!-- Download Button -->
-            <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop/releases/latest" class="btn-primary text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center gap-2 text-lg">
-                <i class="fa-solid fa-download"></i> <span id="btn-dl-text">Download for Windows</span>
+            <!-- Download Button Light -->
+            <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop/releases/download/latest/RewEQTransferAssistant-Light.zip" class="btn-primary text-white font-bold py-4 px-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
+                <div class="flex items-center gap-2 text-lg"><i class="fa-solid fa-download"></i> <span id="btn-dl-light">Download Light (~15MB)</span></div>
+                <span id="btn-dl-light-sub" class="text-xs text-blue-200 mt-1">Requires .NET 8</span>
+            </a>
+            <!-- Download Button Full -->
+            <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop/releases/download/latest/RewEQTransferAssistant-Full.zip" class="btn-primary text-white font-bold py-4 px-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
+                <div class="flex items-center gap-2 text-lg"><i class="fa-solid fa-download"></i> <span id="btn-dl-full">Download Full (~70MB)</span></div>
+                <span id="btn-dl-full-sub" class="text-xs text-blue-200 mt-1">Standalone (No installation)</span>
             </a>
             <!-- Support Button -->
-            <a href="https://www.paypal.com/donate/?business=E8XUC7FQ6KDBQ&no_recurring=0&item_name=REW+EQ+Transfer+Assistant%0A%0AThank+you+for+your+support%21+Your+contribution+helps+power+future+updates.&currency_code=USD" target="_blank" class="btn-donate text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center gap-2 text-lg">
+            <a href="https://www.paypal.com/donate/?business=E8XUC7FQ6KDBQ&no_recurring=0&item_name=REW+EQ+Transfer+Assistant%0A%0AThank+you+for+your+support%21+Your+contribution+helps+power+future+updates.&currency_code=USD" target="_blank" class="btn-donate text-white font-bold py-4 px-6 rounded-lg shadow-lg flex items-center justify-center gap-2 text-lg">
                 <span id="btn-support-text">☕ Support the Project 💲</span>
             </a>
         </div>
@@ -142,9 +148,12 @@
                 "hero_title_1": "Stop Typing EQs Manually.",
                 "hero_title_2": "Copy and Paste.",
                 "hero_desc": "The ultimate automation tool to bridge Room EQ Wizard (REW) with Automotive and Home Audio DSPs. Transfer your tuning settings with a single click.",
-                "download_btn": "Download for Windows",
+                "dl_light": "Download Light (~15MB)",
+                "dl_light_sub": "Requires .NET 8",
+                "dl_full": "Download Full (~70MB)",
+                "dl_full_sub": "Standalone (No installation)",
                 "support_btn": "☕ Support the Project 💲",
-                "req_text": "Version 1.1.0 • Requires Windows 10/11",
+                "req_text": "Version 1.1.0 • Windows 10/11",
                 "features_title": "Why use RewDspAssistant.Desktop?",
                 "f1_title": "Lightning Fast",
                 "f1_desc": "No more manually typing Frequency, Q, and Gain values. Transfer up to 30 bands instantly via API or Clipboard.",
@@ -162,9 +171,12 @@
                 "hero_title_1": "Pare de digitar EQs manualmente.",
                 "hero_title_2": "Apenas Copie e Cole.",
                 "hero_desc": "A ferramenta de automação definitiva para integrar o Room EQ Wizard (REW) com DSPs automotivos e residenciais. Transfira seu ajuste com um único clique.",
-                "download_btn": "Baixar para Windows",
+                "dl_light": "Baixar Leve (~15MB)",
+                "dl_light_sub": "Requer .NET 8",
+                "dl_full": "Baixar Completo (~70MB)",
+                "dl_full_sub": "Independente (Não requer instalar)",
                 "support_btn": "☕ Apoie o Projeto 💲",
-                "req_text": "Versão 1.1.0 • Requer Windows 10/11",
+                "req_text": "Versão 1.1.0 • Windows 10/11",
                 "features_title": "Por que usar o RewDspAssistant.Desktop?",
                 "f1_title": "Extremamente Rápido",
                 "f1_desc": "Chega de digitar Frequência, Q e Ganho manualmente. Transfira até 30 bandas instantaneamente via API ou Área de Transferência.",
@@ -182,9 +194,12 @@
                 "hero_title_1": "Deja de escribir EQs manualmente.",
                 "hero_title_2": "Copia y Pega.",
                 "hero_desc": "La herramienta de automatización definitiva para conectar Room EQ Wizard (REW) con DSPs automotrices y de hogar. Transfiere tu ajuste con un solo clic.",
-                "download_btn": "Descargar para Windows",
+                "dl_light": "Descarga Ligera (~15MB)",
+                "dl_light_sub": "Requiere .NET 8",
+                "dl_full": "Descarga Completa (~70MB)",
+                "dl_full_sub": "Independiente (Sin instalación)",
                 "support_btn": "☕ Apoya el Proyecto 💲",
-                "req_text": "Versión 1.1.0 • Requiere Windows 10/11",
+                "req_text": "Versión 1.1.0 • Windows 10/11",
                 "features_title": "¿Por qué usar RewDspAssistant.Desktop?",
                 "f1_title": "Súper Rápido",
                 "f1_desc": "No más teclear Frecuencia, Q y Ganancia. Transfiere hasta 30 bandas al instante vía API o Portapapeles.",
@@ -210,7 +225,12 @@
             document.getElementById("hero-t1").innerHTML = t.hero_title_1 + "<br>";
             document.getElementById("hero-t2").innerText = t.hero_title_2;
             document.getElementById("hero-desc").innerText = t.hero_desc;
-            document.getElementById("btn-dl-text").innerText = t.download_btn;
+            
+            document.getElementById("btn-dl-light").innerText = t.dl_light;
+            document.getElementById("btn-dl-light-sub").innerText = t.dl_light_sub;
+            document.getElementById("btn-dl-full").innerText = t.dl_full;
+            document.getElementById("btn-dl-full-sub").innerText = t.dl_full_sub;
+            
             document.getElementById("btn-support-text").innerText = t.support_btn;
             document.getElementById("req-text").innerText = t.req_text;
             
