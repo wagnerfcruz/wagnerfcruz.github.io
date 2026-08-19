@@ -53,7 +53,7 @@
                 <span>RewDspAssistant<span class="text-blue-500">.Desktop</span></span>
             </div>
             <nav class="hidden md:flex gap-6 items-center">
-                <a href="#features" class="hover:text-blue-400 transition">Features</a>
+                <a href="#features" id="nav-features" class="hover:text-blue-400 transition">Features</a>
                 <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-github text-xl"></i></a>
             </nav>
         </div>
@@ -62,24 +62,24 @@
     <!-- Hero Section -->
     <section class="container mx-auto px-6 py-20 text-center">
         <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-            Stop Typing EQs Manually.<br>
-            <span class="gradient-text">Copy and Paste.</span>
+            <span id="hero-t1">Stop Typing EQs Manually.<br></span>
+            <span id="hero-t2" class="gradient-text">Copy and Paste.</span>
         </h1>
-        <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+        <p id="hero-desc" class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
             The ultimate automation tool to bridge Room EQ Wizard (REW) with Automotive and Home Audio DSPs. Transfer your tuning settings with a single click.
         </p>
         
         <div class="flex flex-col sm:flex-row justify-center gap-4">
             <!-- Download Button -->
             <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop/releases/latest" class="btn-primary text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center gap-2 text-lg">
-                <i class="fa-solid fa-download"></i> Download for Windows
+                <i class="fa-solid fa-download"></i> <span id="btn-dl-text">Download for Windows</span>
             </a>
             <!-- Support Button -->
             <a href="https://www.paypal.com/donate/?business=E8XUC7FQ6KDBQ&no_recurring=0&item_name=REW+EQ+Transfer+Assistant%0A%0AThank+you+for+your+support%21+Your+contribution+helps+power+future+updates.&currency_code=USD" target="_blank" class="btn-donate text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center gap-2 text-lg">
-                ☕ Support the Project 💲
+                <span id="btn-support-text">☕ Support the Project 💲</span>
             </a>
         </div>
-        <p class="mt-4 text-sm text-gray-500">Version 1.1.0 • Requires Windows 10/11</p>
+        <p id="req-text" class="mt-4 text-sm text-gray-500">Version 1.1.0 • Requires Windows 10/11</p>
         
         <!-- Mockup Image / Preview -->
         <div class="mt-16 mx-auto max-w-4xl rounded-xl overflow-hidden shadow-2xl border border-gray-700">
@@ -90,7 +90,7 @@
     <!-- Features Section -->
     <section id="features" class="bg-gray-900 py-20">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16">Why use RewDspAssistant.Desktop?</h2>
+            <h2 id="feat-title" class="text-3xl font-bold text-center mb-16">Why use RewDspAssistant.Desktop?</h2>
             
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
@@ -98,24 +98,24 @@
                     <div class="w-16 h-16 rounded-full bg-blue-900 bg-opacity-50 text-blue-400 flex items-center justify-center text-2xl mx-auto mb-6">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Lightning Fast</h3>
-                    <p class="text-gray-400">No more manually typing Frequency, Q, and Gain values. Transfer up to 30 bands instantly via API or Clipboard.</p>
+                    <h3 id="f1-title" class="text-xl font-bold mb-4">Lightning Fast</h3>
+                    <p id="f1-desc" class="text-gray-400">No more manually typing Frequency, Q, and Gain values. Transfer up to 30 bands instantly via API or Clipboard.</p>
                 </div>
                 <!-- Feature 2 -->
                 <div class="feature-card rounded-xl p-8 text-center">
                     <div class="w-16 h-16 rounded-full bg-green-900 bg-opacity-50 text-green-400 flex items-center justify-center text-2xl mx-auto mb-6">
                         <i class="fa-solid fa-check-double"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Zero Errors</h3>
-                    <p class="text-gray-400">Eliminate human error when transferring complex tunings. Ensure your DSP matches your REW calculations perfectly.</p>
+                    <h3 id="f2-title" class="text-xl font-bold mb-4">Zero Errors</h3>
+                    <p id="f2-desc" class="text-gray-400">Eliminate human error when transferring complex tunings. Ensure your DSP matches your REW calculations perfectly.</p>
                 </div>
                 <!-- Feature 3 -->
                 <div class="feature-card rounded-xl p-8 text-center">
                     <div class="w-16 h-16 rounded-full bg-purple-900 bg-opacity-50 text-purple-400 flex items-center justify-center text-2xl mx-auto mb-6">
                         <i class="fa-solid fa-car-side"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Multi-Platform DSPs</h3>
-                    <p class="text-gray-400">Designed to bridge the gap for popular automotive and home DSP platforms. Open architecture for profiles.</p>
+                    <h3 id="f3-title" class="text-xl font-bold mb-4">Multi-Platform DSPs</h3>
+                    <p id="f3-desc" class="text-gray-400">Designed to bridge the gap for popular automotive and home DSP platforms. Open architecture for profiles.</p>
                 </div>
             </div>
         </div>
@@ -124,13 +124,114 @@
     <!-- Footer -->
     <footer class="border-t border-gray-800 py-10 mt-10">
         <div class="container mx-auto px-6 text-center text-gray-500">
-            <p class="mb-4">Created by <strong>Wagner Cruz</strong></p>
+            <p class="mb-4"><span id="created-by">Created by</span> <strong>Wagner Cruz</strong></p>
             <div class="flex justify-center gap-6 text-xl mb-4">
                 <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
             </div>
-            <p class="text-sm">Licensed under MIT License. Not affiliated with Room EQ Wizard.</p>
+            <p id="license-text" class="text-sm">Licensed under MIT License. Not affiliated with Room EQ Wizard.</p>
         </div>
     </footer>
 
+    <!-- Language Script -->
+    <script>
+        const translations = {
+            "en": {
+                "title": "RewDspAssistant.Desktop | Copy/Paste EQ settings to your DSP",
+                "desc": "Automate and integrate Room EQ Wizard (REW) with Car Audio and Home DSPs. Transfer EQ settings with a single click.",
+                "features": "Features",
+                "hero_title_1": "Stop Typing EQs Manually.",
+                "hero_title_2": "Copy and Paste.",
+                "hero_desc": "The ultimate automation tool to bridge Room EQ Wizard (REW) with Automotive and Home Audio DSPs. Transfer your tuning settings with a single click.",
+                "download_btn": "Download for Windows",
+                "support_btn": "☕ Support the Project 💲",
+                "req_text": "Version 1.1.0 • Requires Windows 10/11",
+                "features_title": "Why use RewDspAssistant.Desktop?",
+                "f1_title": "Lightning Fast",
+                "f1_desc": "No more manually typing Frequency, Q, and Gain values. Transfer up to 30 bands instantly via API or Clipboard.",
+                "f2_title": "Zero Errors",
+                "f2_desc": "Eliminate human error when transferring complex tunings. Ensure your DSP matches your REW calculations perfectly.",
+                "f3_title": "Multi-Platform DSPs",
+                "f3_desc": "Designed to bridge the gap for popular automotive and home DSP platforms. Open architecture for profiles.",
+                "created_by": "Created by",
+                "license": "Licensed under MIT License. Not affiliated with Room EQ Wizard."
+            },
+            "pt": {
+                "title": "RewDspAssistant.Desktop | Copie e Cole EQs para o seu DSP",
+                "desc": "Automatize e integre o Room EQ Wizard (REW) com DSPs Automotivos e Residenciais. Transfira equalizações com um clique.",
+                "features": "Recursos",
+                "hero_title_1": "Pare de digitar EQs manualmente.",
+                "hero_title_2": "Apenas Copie e Cole.",
+                "hero_desc": "A ferramenta de automação definitiva para integrar o Room EQ Wizard (REW) com DSPs automotivos e residenciais. Transfira seu ajuste com um único clique.",
+                "download_btn": "Baixar para Windows",
+                "support_btn": "☕ Apoie o Projeto 💲",
+                "req_text": "Versão 1.1.0 • Requer Windows 10/11",
+                "features_title": "Por que usar o RewDspAssistant.Desktop?",
+                "f1_title": "Extremamente Rápido",
+                "f1_desc": "Chega de digitar Frequência, Q e Ganho manualmente. Transfira até 30 bandas instantaneamente via API ou Área de Transferência.",
+                "f2_title": "Zero Erros",
+                "f2_desc": "Elimine erros humanos ao transferir ajustes complexos. Garanta que seu DSP corresponda perfeitamente aos cálculos do REW.",
+                "f3_title": "DSPs Multi-Plataforma",
+                "f3_desc": "Projetado para preencher a lacuna dos populares DSPs automotivos e residenciais. Arquitetura aberta para criar perfis.",
+                "created_by": "Criado por",
+                "license": "Licenciado sob MIT License. Não afiliado ao Room EQ Wizard."
+            },
+            "es": {
+                "title": "RewDspAssistant.Desktop | Copia/Pega ajustes de EQ a tu DSP",
+                "desc": "Automatiza e integra Room EQ Wizard (REW) con DSP de Car Audio y Hogar. Transfiere ajustes con un clic.",
+                "features": "Características",
+                "hero_title_1": "Deja de escribir EQs manualmente.",
+                "hero_title_2": "Copia y Pega.",
+                "hero_desc": "La herramienta de automatización definitiva para conectar Room EQ Wizard (REW) con DSPs automotrices y de hogar. Transfiere tu ajuste con un solo clic.",
+                "download_btn": "Descargar para Windows",
+                "support_btn": "☕ Apoya el Proyecto 💲",
+                "req_text": "Versión 1.1.0 • Requiere Windows 10/11",
+                "features_title": "¿Por qué usar RewDspAssistant.Desktop?",
+                "f1_title": "Súper Rápido",
+                "f1_desc": "No más teclear Frecuencia, Q y Ganancia. Transfiere hasta 30 bandas al instante vía API o Portapapeles.",
+                "f2_title": "Cero Errores",
+                "f2_desc": "Elimina errores humanos al transferir ajustes complejos. Asegura que tu DSP coincida perfectamente con REW.",
+                "f3_title": "DSPs Multi-Plataforma",
+                "f3_desc": "Diseñado para los DSPs automotrices y de hogar más populares. Arquitectura abierta para perfiles.",
+                "created_by": "Creado por",
+                "license": "Bajo Licencia MIT. No afiliado con Room EQ Wizard."
+            }
+        };
+
+        function setLanguage(lang) {
+            // Fallback to English if language is not supported
+            if (!translations[lang]) lang = "en";
+            const t = translations[lang];
+            
+            document.title = t.title;
+            document.querySelector('meta[name="description"]').setAttribute("content", t.desc);
+            document.documentElement.lang = lang;
+            
+            document.getElementById("nav-features").innerText = t.features;
+            document.getElementById("hero-t1").innerHTML = t.hero_title_1 + "<br>";
+            document.getElementById("hero-t2").innerText = t.hero_title_2;
+            document.getElementById("hero-desc").innerText = t.hero_desc;
+            document.getElementById("btn-dl-text").innerText = t.download_btn;
+            document.getElementById("btn-support-text").innerText = t.support_btn;
+            document.getElementById("req-text").innerText = t.req_text;
+            
+            document.getElementById("feat-title").innerText = t.features_title;
+            document.getElementById("f1-title").innerText = t.f1_title;
+            document.getElementById("f1-desc").innerText = t.f1_desc;
+            document.getElementById("f2-title").innerText = t.f2_title;
+            document.getElementById("f2-desc").innerText = t.f2_desc;
+            document.getElementById("f3-title").innerText = t.f3_title;
+            document.getElementById("f3-desc").innerText = t.f3_desc;
+            
+            document.getElementById("created-by").innerText = t.created_by;
+            document.getElementById("license-text").innerText = t.license;
+        }
+
+        // Auto-detect browser language
+        window.onload = () => {
+            let userLang = navigator.language || navigator.userLanguage;
+            userLang = userLang.split('-')[0]; // Get the base language (pt-BR -> pt)
+            setLanguage(userLang);
+        };
+    </script>
 </body>
 </html>
