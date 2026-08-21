@@ -56,21 +56,15 @@
                 <a href="https://www.paypal.com/donate/?business=E8XUC7FQ6KDBQ&no_recurring=0&item_name=REW+EQ+Transfer+Assistant%0A%0AThank+you+for+your+support%21+Your+contribution+helps+power+future+updates.&currency_code=USD" target="_blank" id="nav-support" class="hover:text-pink-400 transition text-pink-500 font-medium flex items-center gap-2"><i class="fa-solid fa-mug-hot"></i> <span id="nav-support-text">Support the Project</span></a>
                 <a href="#features" id="nav-features" class="hover:text-blue-400 transition">Features</a>
                 <a href="https://github.com/wagnerfcruz/wagnerfcruz.github.io" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-github text-xl"></i></a>
-                <div class="relative group ml-4 border-l border-gray-700 pl-4">
-                    <button class="flex items-center gap-2 hover:text-blue-400 transition" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa-solid fa-globe text-lg"></i>
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </button>
-                    <!-- Dropdown Menu -->
-                    <div class="absolute right-0 mt-2 w-32 bg-gray-800 rounded-md shadow-lg border border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <ul class="py-1 text-sm text-gray-200">
-                            <li><button onclick="setLanguage('en')" class="block w-full text-left px-4 py-2 hover:bg-gray-700 hover:text-white transition">English</button></li>
-                            <li><button onclick="setLanguage('pt')" class="block w-full text-left px-4 py-2 hover:bg-gray-700 hover:text-white transition">Português</button></li>
-                            <li><button onclick="setLanguage('es')" class="block w-full text-left px-4 py-2 hover:bg-gray-700 hover:text-white transition">Español</button></li>
-                            <li><button onclick="setLanguage('de')" class="block w-full text-left px-4 py-2 hover:bg-gray-700 hover:text-white transition">Deutsch</button></li>
-                            <li><button onclick="setLanguage('zh')" class="block w-full text-left px-4 py-2 hover:bg-gray-700 hover:text-white transition">中文</button></li>
-                        </ul>
-                    </div>
+                <div class="ml-4 border-l border-gray-700 pl-4 flex items-center gap-2">
+                    <i class="fa-solid fa-globe text-gray-400"></i>
+                    <select id="lang-select" onchange="setLanguage(this.value)" class="bg-transparent text-gray-300 text-sm outline-none cursor-pointer hover:text-white appearance-none pr-4 font-medium" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%239CA3AF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right center; background-size: 10px;">
+                        <option value="en" class="bg-gray-800 text-white">English</option>
+                        <option value="pt" class="bg-gray-800 text-white">Português</option>
+                        <option value="es" class="bg-gray-800 text-white">Español</option>
+                        <option value="de" class="bg-gray-800 text-white">Deutsch</option>
+                        <option value="zh" class="bg-gray-800 text-white">中文</option>
+                    </select>
                 </div>
             </nav>
         </div>
@@ -438,6 +432,10 @@
             document.querySelector('meta[name="description"]').setAttribute("content", t.desc);
             document.documentElement.lang = lang;
             
+            if(document.getElementById('lang-select')) {
+                document.getElementById('lang-select').value = lang;
+            }
+            
             if (document.getElementById("nav-support-text")) {
                 document.getElementById("nav-support-text").innerText = t.nav_support;
             }
@@ -452,7 +450,6 @@
             document.getElementById("btn-dl-full").innerText = t.dl_full;
             document.getElementById("btn-dl-full-sub").innerText = t.dl_full_sub;
             
-            document.getElementById("btn-support-text").innerText = t.support_btn;
             document.getElementById("req-text").innerText = t.req_text;
             
             document.getElementById("feat-title").innerText = t.features_title;
