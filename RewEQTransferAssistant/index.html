@@ -99,7 +99,7 @@
         <div class="mt-16 mx-auto max-w-5xl">
             <div class="rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-700 aspect-video relative bg-gray-900 flex items-center justify-center group">
                 <!-- Video Container -->
-                <iframe id="video-frame" class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/_9gR5eyZoWA?autoplay=0&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe id="video-frame" class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/_9gR5eyZoWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <p class="mt-4 text-gray-400 text-sm text-center" id="video-caption">
                 <i class="fa-solid fa-circle-info mr-1"></i> Watch how the assistant seamlessly transfers EQ data in seconds.
@@ -256,7 +256,7 @@
                 "community_title": "Need a Profile for your DSP?",
                 "community_desc": "We are constantly adding new DSP integration profiles. If you have a specific Automotive or Home DSP that isn't supported yet, let us know on GitHub!",
                 "btn_request": "Request a new DSP Profile",
-                "video_url": "https://www.youtube.com/embed/_9gR5eyZoWA?autoplay=0&rel=0",
+                "video_url": "https://www.youtube.com/embed/_9gR5eyZoWA",
                 "video_caption": "<i class=\"fa-solid fa-circle-info mr-1\"></i> Watch how the assistant seamlessly transfers EQ data in seconds."
             },
             "pt": {
@@ -295,7 +295,7 @@
                 "community_title": "Precisa de um Perfil para o seu DSP?",
                 "community_desc": "Estamos constantemente adicionando novos perfis de integração. Se você tem um DSP específico que ainda não é suportado, avise-nos no GitHub!",
                 "btn_request": "Solicitar novo Perfil de DSP",
-                "video_url": "https://www.youtube.com/embed/hdDA4s-lcYM?autoplay=0&rel=0",
+                "video_url": "https://www.youtube.com/embed/hdDA4s-lcYM",
                 "video_caption": "<i class=\"fa-solid fa-circle-info mr-1\"></i> Veja como o assistente transfere os dados de EQ em segundos."
             },
             "es": {
@@ -334,7 +334,7 @@
                 "community_title": "¿Necesitas un Perfil para tu DSP?",
                 "community_desc": "Estamos añadiendo constantemente nuevos perfiles. Si tienes un DSP específico que aún no es compatible, ¡avísanos en GitHub!",
                 "btn_request": "Solicitar nuevo Perfil de DSP",
-                "video_url": "https://www.youtube.com/embed/_9gR5eyZoWA?autoplay=0&rel=0",
+                "video_url": "https://www.youtube.com/embed/_9gR5eyZoWA",
                 "video_caption": "<i class=\"fa-solid fa-circle-info mr-1\"></i> Mira cómo el asistente transfiere los datos de EQ en segundos."
             }
         };
@@ -388,11 +388,16 @@
             
             document.getElementById("created-by").innerText = t.created_by;
             document.getElementById("license-text").innerText = t.license;
+
             // Update Video and Caption dynamically
             if(t.video_url) {
+                console.log("Setting video url to", t.video_url);
                 document.getElementById('video-frame').src = t.video_url;
                 document.getElementById('video-caption').innerHTML = t.video_caption;
+            } else {
+                console.error("No video_url found for language!");
             }
+
 
         }
 
