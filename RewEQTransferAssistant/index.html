@@ -56,10 +56,21 @@
                 <a href="https://www.paypal.com/donate/?business=E8XUC7FQ6KDBQ&no_recurring=0&item_name=REW+EQ+Transfer+Assistant%0A%0AThank+you+for+your+support%21+Your+contribution+helps+power+future+updates.&currency_code=USD" target="_blank" id="nav-support" class="hover:text-pink-400 transition text-pink-500 font-medium flex items-center gap-2"><i class="fa-solid fa-mug-hot"></i> <span id="nav-support-text">Support the Project</span></a>
                 <a href="#features" id="nav-features" class="hover:text-blue-400 transition">Features</a>
                 <a href="https://github.com/wagnerfcruz/wagnerfcruz.github.io" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-github text-xl"></i></a>
-                <div class="flex gap-3 ml-4 border-l border-gray-700 pl-4">
-                    <button onclick="setLanguage('en')" class="hover:opacity-80 transition" title="English">🇺🇸</button>
-                    <button onclick="setLanguage('pt')" class="hover:opacity-80 transition" title="Português">🇧🇷</button>
-                    <button onclick="setLanguage('es')" class="hover:opacity-80 transition" title="Español">🇪🇸</button>
+                <div class="relative group ml-4 border-l border-gray-700 pl-4">
+                    <button class="flex items-center gap-2 hover:text-blue-400 transition" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa-solid fa-globe text-lg"></i>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute right-0 mt-2 w-32 bg-gray-800 rounded-md shadow-lg border border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <ul class="py-1 text-sm text-gray-200">
+                            <li><button onclick="setLanguage('en')" class="block w-full text-left px-4 py-2 hover:bg-gray-700 hover:text-white transition">English</button></li>
+                            <li><button onclick="setLanguage('pt')" class="block w-full text-left px-4 py-2 hover:bg-gray-700 hover:text-white transition">Português</button></li>
+                            <li><button onclick="setLanguage('es')" class="block w-full text-left px-4 py-2 hover:bg-gray-700 hover:text-white transition">Español</button></li>
+                            <li><button onclick="setLanguage('de')" class="block w-full text-left px-4 py-2 hover:bg-gray-700 hover:text-white transition">Deutsch</button></li>
+                            <li><button onclick="setLanguage('zh')" class="block w-full text-left px-4 py-2 hover:bg-gray-700 hover:text-white transition">中文</button></li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -336,6 +347,86 @@
                 "btn_request": "Solicitar nuevo Perfil de DSP",
                 "video_url": "https://www.youtube.com/embed/_9gR5eyZoWA",
                 "video_caption": "<i class=\"fa-solid fa-circle-info mr-1\"></i> Mira cómo el asistente transfiere los datos de EQ en segundos."
+            },
+            "de": {
+                "title": "RewEQTransferAssistant | EQ-Einstellungen kopieren/einfügen",
+                "desc": "Automatisieren Sie Room EQ Wizard (REW) mit Car-Audio- und Home-DSPs. EQ-Einstellungen mit einem Klick übertragen.",
+                "nav_support": "Projekt unterstützen",
+                "features": "Funktionen",
+                "hero_badge": "Direkte REW-API-Integration",
+                "hero_title_1": "Hören Sie auf, EQs manuell abzutippen.",
+                "hero_title_2": "Kopieren und Einfügen.",
+                "hero_desc": "Das ultimative Automatisierungstool zur Verbindung von Room EQ Wizard (REW) mit Automobil- und Home-Audio-DSPs.",
+                "dl_light": "Light-Version (~15MB)",
+                "dl_light_sub": "Benötigt .NET 8",
+                "dl_full": "Vollversion (~70MB)",
+                "dl_full_sub": "Standalone (Keine Installation)",
+                "support_btn": "☕ Projekt unterstützen 💲",
+                "req_text": "✅ Windows 10/11 • 🖥️ Alle DPI-Skalierungen unterstützt • 🌐 DE, EN, PT",
+                "features_title": "Warum RewEQTransferAssistant nutzen?",
+                "f1_title": "Blitzschnell",
+                "f1_desc": "Kein manuelles Eintippen von Frequenz, Q und Gain mehr. Übertragen Sie bis zu 30 Bänder sofort per API.",
+                "f2_title": "Null Fehler",
+                "f2_desc": "Vermeiden Sie menschliche Fehler bei der Übertragung komplexer Tunings. Ihr DSP stimmt perfekt mit REW überein.",
+                "f3_title": "Multi-Plattform-DSPs",
+                "f3_desc": "Entwickelt, um die Lücke für beliebte Automobil- und Home-DSP-Plattformen zu schließen.",
+                "created_by": "Erstellt von",
+                "license": "Freeware. Kostenlos für private und gewerbliche Nutzung. Nicht mit Room EQ Wizard verbunden.",
+                "time_saved_title": "Verwandeln Sie 1 bis 2 Stunden Tipparbeit in nur 2 Minuten.",
+                "time_saved_desc": "Verschwenden Sie keine Zeit mehr damit, über 70 EQ-Bänder für ein Mehrkanalsystem manuell zu kopieren.",
+                "supported_title": "Unterstützte DSPs",
+                "supported_desc": "Funktioniert nahtlos mit erstklassigen DSP-Herstellern. Mit über 30 nativen Profilen.",
+                "supported_generic": "Und viele andere über das Generic Data Profile",
+                "tech_title": "Erweiterte Filterlogik",
+                "tech_desc": "Wir kopieren nicht einfach blind Zahlen. <strong>RewEQTransferAssistant</strong> übersetzt die mathematischen Rohdaten:",
+                "tech_li1": "<strong>High Shelf (HS) & Low Shelf (LS):</strong> Das Q wird dynamisch berechnet.",
+                "tech_li2": "<strong>High Pass (HP) & Low Pass (LP):</strong> Erzwingt den mathematisch korrekten Q-Wert basierend auf dem Crossover-Alignment.",
+                "tech_li3": "<strong>Peak-Filter (PK):</strong> Q und Gain werden perfekt beibehalten.",
+                "community_title": "Benötigen Sie ein Profil für Ihren DSP?",
+                "community_desc": "Wir fügen ständig neue Profile hinzu. Lassen Sie es uns auf GitHub wissen!",
+                "btn_request": "Neues DSP-Profil anfordern",
+                "video_url": "https://www.youtube.com/embed/_9gR5eyZoWA",
+                "video_caption": "<i class=\"fa-solid fa-circle-info mr-1\"></i> Sehen Sie, wie der Assistent EQ-Daten in Sekunden überträgt."
+            },
+            "zh": {
+                "title": "RewEQTransferAssistant | 复制/粘贴 EQ 设置到 DSP",
+                "desc": "自动化 Room EQ Wizard (REW) 与车载和家用 DSP 的集成。一键传输 EQ 设置。",
+                "nav_support": "支持项目",
+                "features": "功能特点",
+                "hero_badge": "直接 REW API 集成",
+                "hero_title_1": "停止手动输入 EQ。",
+                "hero_title_2": "只需复制和粘贴。",
+                "hero_desc": "连接 Room EQ Wizard (REW) 与汽车和家庭音频 DSP 的终极自动化工具。一键传输您的调音设置。",
+                "dl_light": "精简版下载 (~15MB)",
+                "dl_light_sub": "需要 .NET 8",
+                "dl_full": "完整版下载 (~70MB)",
+                "dl_full_sub": "独立运行 (无需安装)",
+                "support_btn": "☕ 支持项目 💲",
+                "req_text": "✅ Windows 10/11 • 🖥️ 支持任何 DPI 缩放 • 🌐 中文, EN, PT",
+                "features_title": "为什么使用 RewEQTransferAssistant？",
+                "f1_title": "闪电般快速",
+                "f1_desc": "不再需要手动输入频率、Q 值和增益。通过 API 瞬间传输多达 30 个频段。",
+                "f2_title": "零错误",
+                "f2_desc": "消除传输复杂调音时的人为错误。确保您的 DSP 与 REW 计算完美匹配。",
+                "f3_title": "多平台 DSP",
+                "f3_desc": "专为弥合流行的汽车和家庭 DSP 平台之间的差距而设计。开放的配置文件架构。",
+                "created_by": "创建者",
+                "license": "免费软件。免费用于个人和商业用途。与 Room EQ Wizard 无关联。",
+                "time_saved_title": "将 1 到 2 小时的打字时间缩短为仅需 2 分钟。",
+                "time_saved_desc": "不要再浪费时间为多通道系统手动复制 70 多个 EQ 频段。",
+                "supported_title": "支持的 DSP",
+                "supported_desc": "与顶级汽车和家庭音频 DSP 制造商无缝协作。拥有 30 多个原生配置文件，还在不断增加。",
+                "supported_generic": "还有许多其他使用通用数据配置文件的设备",
+                "tech_title": "高级滤波器逻辑",
+                "tech_desc": "我们不只是盲目地复制数字。<strong>RewEQTransferAssistant</strong> 将 REW 的原始数学数据转换为：",
+                "tech_li1": "<strong>高架 (HS) 和低架 (LS)：</strong> 根据 REW 默认斜率和导出的增益动态计算 Q 值。",
+                "tech_li2": "<strong>高通 (HP) 和低通 (LP)：</strong> 软件根据您选择的分频对齐方式强制执行数学上正确的 Q 值。",
+                "tech_li3": "<strong>峰值滤波器 (PK)：</strong> Q 值和增益参数得以完美保留。",
+                "community_title": "需要适合您 DSP 的配置文件吗？",
+                "community_desc": "我们不断添加新的集成配置文件。在 GitHub 上告诉我们！",
+                "btn_request": "请求新的 DSP 配置文件",
+                "video_url": "https://www.youtube.com/embed/_9gR5eyZoWA",
+                "video_caption": "<i class=\"fa-solid fa-circle-info mr-1\"></i> 观看助手如何在几秒钟内传输 EQ 数据。"
             }
         };
 
