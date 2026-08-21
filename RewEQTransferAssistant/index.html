@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RewEQTransferAssistant | Copy/Paste EQ settings to your DSP</title>
+    <title>RewDspAssistant.Desktop | Copy/Paste EQ settings to your DSP</title>
     <meta name="description" content="Automate and integrate Room EQ Wizard (REW) with Car Audio and Home DSPs. Transfer EQ settings with a single click.">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -41,6 +41,41 @@
         .btn-donate:hover {
             background-color: #E11D48;
         }
+        
+        /* Language Dropdown Styles */
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #1E293B;
+            min-width: 140px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            z-index: 1;
+            border-radius: 0.5rem;
+            border: 1px solid #334155;
+            overflow: hidden;
+        }
+        .lang-dropdown-content button {
+            color: #F8FAFC;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.2s;
+        }
+        .lang-dropdown-content button:hover {
+            background-color: #334155;
+        }
+        .lang-dropdown:hover .lang-dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-blue-500 selection:text-white">
@@ -50,69 +85,67 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold flex items-center gap-2">
                 <i class="fa-solid fa-sliders text-blue-500"></i>
-                <span>Rew<span class="text-blue-500">EQ</span>TransferAssistant</span>
+                <span>RewDspAssistant<span class="text-blue-500">.Desktop</span></span>
             </div>
-            <nav class="hidden md:flex gap-6 items-center">
-                <a href="#features" id="nav-features" class="hover:text-blue-400 transition">Features</a>
-                <a href="https://github.com/wagnerfcruz/wagnerfcruz.github.io" target="_blank" class="hover:text-blue-400 transition"><i class="fa-brands fa-github text-xl"></i></a>
-                <div class="flex gap-3 ml-4 border-l border-gray-700 pl-4">
-                    <button onclick="setLanguage('en')" class="hover:opacity-80 transition" title="English">🇺🇸</button>
-                    <button onclick="setLanguage('pt')" class="hover:opacity-80 transition" title="Português">🇧🇷</button>
-                    <button onclick="setLanguage('es')" class="hover:opacity-80 transition" title="Español">🇪🇸</button>
+            <nav class="flex gap-6 items-center">
+                <a href="#features" class="hidden md:inline hover:text-blue-400 transition">Features</a>
+                <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop" target="_blank" class="hidden md:inline hover:text-blue-400 transition"><i class="fa-brands fa-github text-xl"></i></a>
+                
+                <!-- Language Selector -->
+                <div class="lang-dropdown ml-2">
+                    <button class="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg border border-gray-700 transition">
+                        <span id="current-lang-flag">🇺🇸</span>
+                        <span id="current-lang-text" class="font-semibold text-sm">EN</span>
+                        <i class="fa-solid fa-chevron-down text-xs ml-1 text-gray-400"></i>
+                    </button>
+                    <div class="lang-dropdown-content mt-1">
+                        <button onclick="setLanguage('en')"><span>🇺🇸</span> English</button>
+                        <button onclick="setLanguage('pt')"><span>🇧🇷</span> Português</button>
+                        <button onclick="setLanguage('es')"><span>🇪🇸</span> Español</button>
+                    </div>
                 </div>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="container mx-auto px-6 py-20 text-center">
-        <div class="inline-block bg-blue-900 bg-opacity-30 border border-blue-500 text-blue-300 rounded-full px-5 py-2 mb-8 text-sm font-semibold tracking-wide shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-            <i class="fa-solid fa-plug-circle-bolt mr-2"></i> <span id="hero-badge">Direct REW API Integration</span>
-        </div>
+    <section class="container mx-auto px-6 py-16 text-center">
         <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-            <span id="hero-t1">Stop Typing EQs Manually.<br></span>
-            <span id="hero-t2" class="gradient-text">Copy and Paste.</span>
+            Stop Typing EQs Manually.<br>
+            <span class="gradient-text">Copy and Paste.</span>
         </h1>
-        <p id="hero-desc" class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+        <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
             The ultimate automation tool to bridge Room EQ Wizard (REW) with Automotive and Home Audio DSPs. Transfer your tuning settings with a single click.
         </p>
         
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <!-- Download Button Light -->
-            <a href="https://github.com/wagnerfcruz/wagnerfcruz.github.io/releases/latest/download/RewEQTransferAssistant-Light.zip" class="btn-primary text-white font-bold py-4 px-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
-                <div class="flex items-center gap-2 text-lg"><i class="fa-solid fa-download"></i> <span id="btn-dl-light">Download Light (~15MB)</span></div>
-                <span id="btn-dl-light-sub" class="text-xs text-blue-200 mt-1">Requires .NET 8</span>
-            </a>
-            <!-- Download Button Full -->
-            <a href="https://github.com/wagnerfcruz/wagnerfcruz.github.io/releases/latest/download/RewEQTransferAssistant-Full.zip" class="btn-primary text-white font-bold py-4 px-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
-                <div class="flex items-center gap-2 text-lg"><i class="fa-solid fa-download"></i> <span id="btn-dl-full">Download Full (~70MB)</span></div>
-                <span id="btn-dl-full-sub" class="text-xs text-blue-200 mt-1">Standalone (No installation)</span>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-4">
+            <!-- Download Button -->
+            <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop/releases/latest" class="btn-primary text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center gap-2 text-lg">
+                <i class="fa-solid fa-download"></i> Download for Windows
             </a>
             <!-- Support Button -->
-            <a href="https://www.paypal.com/donate/?business=E8XUC7FQ6KDBQ&no_recurring=0&item_name=REW+EQ+Transfer+Assistant%0A%0AThank+you+for+your+support%21+Your+contribution+helps+power+future+updates.&currency_code=USD" target="_blank" class="btn-donate text-white font-bold py-4 px-6 rounded-lg shadow-lg flex items-center justify-center gap-2 text-lg">
-                <span id="btn-support-text">☕ Support the Project 💲</span>
+            <a href="https://www.paypal.com/donate/?business=E8XUC7FQ6KDBQ&no_recurring=0&item_name=REW+EQ+Transfer+Assistant%0A%0AThank+you+for+your+support%21+Your+contribution+helps+power+future+updates.&currency_code=USD" target="_blank" class="btn-donate text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center gap-2 text-lg">
+                ☕ Support the Project 💲
             </a>
         </div>
-        <p id="req-text" class="mt-6 text-sm text-gray-400 font-medium">✅ Windows 10/11 • 🖥️ Any DPI Scaling Supported • 🌐 EN, PT-BR, ES</p>
+        <p class="text-sm text-gray-500 mb-12">Version 1.1.0 • Requires Windows 10/11</p>
         
-        <!-- Mockup Image / Preview -->
-        <div class="mt-16 mx-auto max-w-4xl rounded-xl overflow-hidden shadow-2xl border border-gray-700">
-            <img src="https://raw.githubusercontent.com/wagnerfcruz/RewEQTransferAssistant.Desktop/main/images/screenshot.png" alt="App Screenshot" class="w-full" onerror="this.onerror=null; this.src='https://via.placeholder.com/1200x675/1e293b/94a3b8?text=Screenshot+of+RewEQTransferAssistant'">
-        </div>
-    </section>
-
-    <!-- Time Savings Banner -->
-    <section class="bg-blue-600 bg-opacity-10 border-y border-blue-900/50 py-12">
-        <div class="container mx-auto px-6 text-center">
-            <h2 id="time-saved-title" class="text-3xl md:text-4xl font-extrabold text-blue-100 mb-3">Transform 1 to 2 hours of typing into just 2 minutes.</h2>
-            <p id="time-saved-desc" class="text-xl text-blue-300 max-w-3xl mx-auto">Stop wasting time manually copying 70+ EQ bands for a multi-channel system.</p>
+        <!-- Video Showcase -->
+        <div class="mx-auto max-w-5xl">
+            <div class="rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-gray-700 aspect-video relative bg-gray-900 flex items-center justify-center group">
+                <!-- Video Container -->
+                <iframe id="video-frame" class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/_9gR5eyZoWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <p id="video-caption" class="mt-4 text-gray-400 text-sm">
+                <i class="fa-solid fa-circle-info mr-1"></i> Watch how the assistant seamlessly transfers EQ data in seconds.
+            </p>
         </div>
     </section>
 
     <!-- Features Section -->
     <section id="features" class="bg-gray-900 py-20">
         <div class="container mx-auto px-6">
-            <h2 id="feat-title" class="text-3xl font-bold text-center mb-16">Why use RewEQTransferAssistant?</h2>
+            <h2 class="text-3xl font-bold text-center mb-16">Why use RewDspAssistant.Desktop?</h2>
             
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
@@ -120,273 +153,99 @@
                     <div class="w-16 h-16 rounded-full bg-blue-900 bg-opacity-50 text-blue-400 flex items-center justify-center text-2xl mx-auto mb-6">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
-                    <h3 id="f1-title" class="text-xl font-bold mb-4">Lightning Fast</h3>
-                    <p id="f1-desc" class="text-gray-400">No more manually typing Frequency, Q, and Gain values. Transfer up to 30 bands instantly via API or Clipboard.</p>
+                    <h3 class="text-xl font-bold mb-4">Lightning Fast</h3>
+                    <p class="text-gray-400">No more manually typing Frequency, Q, and Gain values. Transfer up to 30 bands instantly via API or Clipboard.</p>
                 </div>
                 <!-- Feature 2 -->
                 <div class="feature-card rounded-xl p-8 text-center">
                     <div class="w-16 h-16 rounded-full bg-green-900 bg-opacity-50 text-green-400 flex items-center justify-center text-2xl mx-auto mb-6">
                         <i class="fa-solid fa-check-double"></i>
                     </div>
-                    <h3 id="f2-title" class="text-xl font-bold mb-4">Zero Errors</h3>
-                    <p id="f2-desc" class="text-gray-400">Eliminate human error when transferring complex tunings. Ensure your DSP matches your REW calculations perfectly.</p>
+                    <h3 class="text-xl font-bold mb-4">Zero Errors</h3>
+                    <p class="text-gray-400">Eliminate human error when transferring complex tunings. Ensure your DSP matches your REW calculations perfectly.</p>
                 </div>
                 <!-- Feature 3 -->
                 <div class="feature-card rounded-xl p-8 text-center">
                     <div class="w-16 h-16 rounded-full bg-purple-900 bg-opacity-50 text-purple-400 flex items-center justify-center text-2xl mx-auto mb-6">
                         <i class="fa-solid fa-car-side"></i>
                     </div>
-                    <h3 id="f3-title" class="text-xl font-bold mb-4">Multi-Platform DSPs</h3>
-                    <p id="f3-desc" class="text-gray-400">Designed to bridge the gap for popular automotive and home DSP platforms. Open architecture for profiles.</p>
+                    <h3 class="text-xl font-bold mb-4">Multi-Platform DSPs</h3>
+                    <p class="text-gray-400">Designed to bridge the gap for popular automotive and home DSP platforms. Open architecture for profiles.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Supported DSPs Section -->
-    <section id="supported-dsps" class="py-20 bg-[#0F172A] border-t border-gray-800">
-        <div class="container mx-auto px-6 text-center">
-            <h2 id="supported-title" class="text-3xl font-bold mb-6">Supported DSPs</h2>
-            <p id="supported-desc" class="text-gray-400 mb-10 max-w-2xl mx-auto">Works seamlessly with top-tier Automotive and Home Audio DSP manufacturers. With 30+ native profiles and growing.</p>
-            
-            <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">MUSWAY</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Ground Zero</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Hellion</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Nakamichi</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">ZAPCO</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">ESX</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">DBX</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Behringer</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Sennuopu</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Goldhorn</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Rebec</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Best Balance</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Awave</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">ONKYO</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">RedPower</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Down4Sound</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Phoenix Gold</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">Powersoft</span>
-                <span class="bg-gray-800 text-gray-300 px-5 py-2 rounded-full font-semibold border border-gray-700 hover:border-blue-500 hover:text-white transition cursor-default">STEG</span>
-            </div>
-            
-            <p id="supported-generic" class="mt-8 text-sm text-gray-500">And many others using the Generic Data Profile (Freq-Q-Gain via Keyboard Nav)</p>
-        </div>
-    </section>
-    <!-- Technical Logic Section -->
-    <section id="technical" class="py-20 bg-gray-900 border-t border-gray-800">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <h2 id="tech-title" class="text-3xl font-bold text-center mb-10">Advanced Filter Logic</h2>
-            <div class="bg-gray-800 rounded-xl p-8 shadow-lg text-gray-300 space-y-6">
-                <p id="tech-desc-1">We don't just copy numbers blindly. <strong>RewEQTransferAssistant</strong> translates REW's raw mathematical data into precise Q factors tailored to the DSP environment:</p>
-                <ul class="list-disc pl-6 space-y-3">
-                    <li id="tech-li-1"><strong>High Shelf (HS) & Low Shelf (LS):</strong> The Q is dynamically calculated based on the REW default Slope (S=0.9) and the exported Gain, guaranteeing an exact curve match.</li>
-                    <li id="tech-li-2"><strong>High Pass (HP) & Low Pass (LP):</strong> The software forces the mathematically correct Q value based on your selected Crossover Alignment (e.g., Butterworth = 0.7071, Linkwitz-Riley = 0.50).</li>
-                    <li id="tech-li-3"><strong>Peak Filters (PK):</strong> Q and Gain parameters are perfectly retained and formatted according to your chosen DSP Profile.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Request Profile Section -->
-    <section id="community" class="py-20 bg-[#0F172A]">
-        <div class="container mx-auto px-6 text-center">
-            <h2 id="community-title" class="text-3xl font-bold mb-6">Need a Profile for your DSP?</h2>
-            <p id="community-desc" class="text-gray-400 mb-10 max-w-2xl mx-auto">We are constantly adding new DSP integration profiles. If you have a specific Automotive or Home DSP that isn't supported yet, let us know on GitHub!</p>
-            <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop/issues/new?title=DSP+Profile+Request:+[BRAND]+[MODEL]" target="_blank" class="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white font-bold py-3 px-6 rounded-lg transition">
-                <i class="fa-brands fa-github text-xl"></i> <span id="btn-request">Request a new DSP Profile</span>
-            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="border-t border-gray-800 py-10 mt-10">
         <div class="container mx-auto px-6 text-center text-gray-500">
-            <p class="mb-4"><span id="created-by">Created by</span> <strong>Wagner Cruz</strong></p>
+            <p class="mb-4">Created by <strong>Wagner Cruz</strong></p>
             <div class="flex justify-center gap-6 text-xl mb-4">
-                <a href="https://github.com/wagnerfcruz/wagnerfcruz.github.io" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/wagnerfcruz/RewEQTransferAssistant.Desktop" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
             </div>
-            <p id="license-text" class="text-sm">Licensed under MIT License. Not affiliated with Room EQ Wizard.</p>
+            <p class="text-sm">Licensed under MIT License. Not affiliated with Room EQ Wizard.</p>
         </div>
     </footer>
 
-    <!-- Language Script -->
+    <!-- Scripts -->
     <script>
-        const translations = {
-            "en": {
-                "title": "RewEQTransferAssistant | Copy/Paste EQ settings to your DSP",
-                "desc": "Automate and integrate Room EQ Wizard (REW) with Car Audio and Home DSPs. Transfer EQ settings with a single click.",
-                "features": "Features",
-                "hero_badge": "Direct REW API Integration",
-                "hero_title_1": "Stop Typing EQs Manually.",
-                "hero_title_2": "Copy and Paste.",
-                "hero_desc": "The ultimate automation tool to bridge Room EQ Wizard (REW) with Automotive and Home Audio DSPs. Transfer your tuning settings with a single click.",
-                "dl_light": "Download Light (~15MB)",
-                "dl_light_sub": "Requires .NET 8",
-                "dl_full": "Download Full (~70MB)",
-                "dl_full_sub": "Standalone (No installation)",
-                "support_btn": "☕ Support the Project 💲",
-                "req_text": "✅ Windows 10/11 • 🖥️ Any DPI Scaling Supported • 🌐 EN, PT-BR, ES",
-                "features_title": "Why use RewEQTransferAssistant?",
-                "f1_title": "Lightning Fast",
-                "f1_desc": "No more manually typing Frequency, Q, and Gain values. Transfer up to 30 bands instantly via API or Clipboard.",
-                "f2_title": "Zero Errors",
-                "f2_desc": "Eliminate human error when transferring complex tunings. Ensure your DSP matches your REW calculations perfectly.",
-                "f3_title": "Multi-Platform DSPs",
-                "f3_desc": "Designed to bridge the gap for popular automotive and home DSP platforms. Open architecture for profiles.",
-                "created_by": "Created by",
-                "license": "Freeware. Free for personal and commercial use. Not affiliated with Room EQ Wizard.",
-                "time_saved_title": "Transform 1 to 2 hours of typing into just 2 minutes.",
-                "time_saved_desc": "Stop wasting time manually copying 70+ EQ bands for a multi-channel system.",
-                "supported_title": "Supported DSPs",
-                "supported_desc": "Works seamlessly with top-tier Automotive and Home Audio DSP manufacturers. With 30+ native profiles and growing.",
-                "supported_generic": "And many others using the Generic Data Profile (Freq-Q-Gain via Keyboard Nav)",
-                "tech_title": "Advanced Filter Logic",
-                "tech_desc": "We don't just copy numbers blindly. <strong>RewEQTransferAssistant</strong> translates REW's raw mathematical data into precise Q factors tailored to the DSP environment:",
-                "tech_li1": "<strong>High Shelf (HS) & Low Shelf (LS):</strong> The Q is dynamically calculated based on the REW default Slope (S=0.9) and the exported Gain, guaranteeing an exact curve match.",
-                "tech_li2": "<strong>High Pass (HP) & Low Pass (LP):</strong> The software forces the mathematically correct Q value based on your selected Crossover Alignment (e.g., Butterworth = 0.7071, Linkwitz-Riley = 0.50).",
-                "tech_li3": "<strong>Peak Filters (PK):</strong> Q and Gain parameters are perfectly retained and formatted according to your chosen DSP Profile.",
-                "community_title": "Need a Profile for your DSP?",
-                "community_desc": "We are constantly adding new DSP integration profiles. If you have a specific Automotive or Home DSP that isn't supported yet, let us know on GitHub!",
-                "btn_request": "Request a new DSP Profile"
+        // Data for each language
+        const langData = {
+            'en': {
+                flag: '🇺🇸',
+                text: 'EN',
+                video: 'https://www.youtube.com/embed/_9gR5eyZoWA?autoplay=0&rel=0',
+                caption: '<i class="fa-solid fa-circle-info mr-1"></i> Watch how the assistant seamlessly transfers EQ data in seconds.'
             },
-            "pt": {
-                "title": "RewEQTransferAssistant | Copie e Cole EQs para o seu DSP",
-                "desc": "Automatize e integre o Room EQ Wizard (REW) com DSPs Automotivos e Residenciais. Transfira equalizações com um clique.",
-                "features": "Recursos",
-                "hero_badge": "Integração Direta com a API do REW",
-                "hero_title_1": "Pare de digitar EQs manualmente.",
-                "hero_title_2": "Apenas Copie e Cole.",
-                "hero_desc": "A ferramenta de automação definitiva para integrar o Room EQ Wizard (REW) com DSPs automotivos e residenciais. Transfira seu ajuste com um único clique.",
-                "dl_light": "Baixar Leve (~15MB)",
-                "dl_light_sub": "Requer .NET 8",
-                "dl_full": "Baixar Completo (~70MB)",
-                "dl_full_sub": "Independente (Não requer instalar)",
-                "support_btn": "☕ Apoie o Projeto 💲",
-                "req_text": "✅ Windows 10/11 • 🖥️ Suporta qualquer escala/DPI • 🌐 PT-BR, EN, ES",
-                "features_title": "Por que usar o RewEQTransferAssistant?",
-                "f1_title": "Extremamente Rápido",
-                "f1_desc": "Chega de digitar Frequência, Q e Ganho manualmente. Transfira até 30 bandas instantaneamente via API ou Área de Transferência.",
-                "f2_title": "Zero Erros",
-                "f2_desc": "Elimine erros humanos ao transferir ajustes complexos. Garanta que seu DSP corresponda perfeitamente aos cálculos do REW.",
-                "f3_title": "DSPs Multi-Plataforma",
-                "f3_desc": "Projetado para preencher a lacuna dos populares DSPs automotivos e residenciais. Arquitetura aberta para criar perfis.",
-                "created_by": "Criado por",
-                "license": "Software Gratuito (Freeware) para uso pessoal ou comercial. Não afiliado ao Room EQ Wizard.",
-                "time_saved_title": "Transforme 1 a 2 horas de digitação em apenas 2 minutos.",
-                "time_saved_desc": "Pare de perder tempo copiando manualmente mais de 70 bandas de EQ em um sistema de múltiplos canais.",
-                "supported_title": "DSPs Suportados",
-                "supported_desc": "Funciona perfeitamente com os principais fabricantes de DSP automotivo e residencial. Mais de 30 perfis nativos e crescendo.",
-                "supported_generic": "E muitos outros usando o Perfil de Dados Genérico (Freq-Q-Gain via Navegação por Teclado)",
-                "tech_title": "Lógica Avançada de Filtros",
-                "tech_desc": "Nós não apenas copiamos números cegamente. O <strong>RewEQTransferAssistant</strong> traduz os dados matemáticos brutos do REW em fatores Q precisos adaptados ao seu DSP:",
-                "tech_li1": "<strong>High Shelf (HS) e Low Shelf (LS):</strong> O Q é calculado dinamicamente com base no Slope padrão do REW (S=0.9) e no Ganho exportado, garantindo uma correspondência exata da curva.",
-                "tech_li2": "<strong>High Pass (HP) e Low Pass (LP):</strong> O software força o valor Q matematicamente correto com base no alinhamento de Crossover selecionado (ex: Butterworth = 0.7071).",
-                "tech_li3": "<strong>Filtros Peak (PK):</strong> Os parâmetros Q e Ganho são perfeitamente retidos e formatados de acordo com o perfil do DSP escolhido.",
-                "community_title": "Precisa de um Perfil para o seu DSP?",
-                "community_desc": "Estamos constantemente adicionando novos perfis de integração. Se você tem um DSP específico que ainda não é suportado, avise-nos no GitHub!",
-                "btn_request": "Solicitar novo Perfil de DSP"
+            'pt': {
+                flag: '🇧🇷',
+                text: 'PT',
+                video: 'https://www.youtube.com/embed/hdDA4s-lcYM?autoplay=0&rel=0',
+                caption: '<i class="fa-solid fa-circle-info mr-1"></i> Veja como o assistente transfere os dados de EQ em segundos.'
             },
-            "es": {
-                "title": "RewEQTransferAssistant | Copia/Pega ajustes de EQ a tu DSP",
-                "desc": "Automatiza e integra Room EQ Wizard (REW) con DSP de Car Audio y Hogar. Transfiere ajustes con un clic.",
-                "features": "Características",
-                "hero_badge": "Integración Directa con la API de REW",
-                "hero_title_1": "Deja de escribir EQs manualmente.",
-                "hero_title_2": "Copia y Pega.",
-                "hero_desc": "La herramienta de automatización definitiva para conectar Room EQ Wizard (REW) con DSPs automotrices y de hogar. Transfiere tu ajuste con un solo clic.",
-                "dl_light": "Descarga Ligera (~15MB)",
-                "dl_light_sub": "Requiere .NET 8",
-                "dl_full": "Descarga Completa (~70MB)",
-                "dl_full_sub": "Independiente (Sin instalación)",
-                "support_btn": "☕ Apoya el Proyecto 💲",
-                "req_text": "✅ Windows 10/11 • 🖥️ Soporta cualquier escala/DPI • 🌐 ES, EN, PT",
-                "features_title": "¿Por qué usar RewEQTransferAssistant?",
-                "f1_title": "Súper Rápido",
-                "f1_desc": "No más teclear Frecuencia, Q y Ganancia. Transfiere hasta 30 bandas al instante vía API o Portapapeles.",
-                "f2_title": "Cero Errores",
-                "f2_desc": "Elimina errores humanos al transferir ajustes complejos. Asegura que tu DSP coincida perfectamente con REW.",
-                "f3_title": "DSPs Multi-Plataforma",
-                "f3_desc": "Diseñado para los DSPs automotrices y de hogar más populares. Arquitectura abierta para perfiles.",
-                "created_by": "Creado por",
-                "license": "Freeware. Uso gratuito personal o comercial. No afiliado con Room EQ Wizard.",
-                "time_saved_title": "Transforma de 1 a 2 horas de escritura en solo 2 minutos.",
-                "time_saved_desc": "Deja de perder tiempo copiando manualmente más de 70 bandas de EQ en un sistema multicanal.",
-                "supported_title": "DSPs Compatibles",
-                "supported_desc": "Funciona perfectamente con los principales fabricantes de DSP de automóvil y hogar. Más de 30 perfiles nativos y creciendo.",
-                "supported_generic": "Y muchos otros usando el Perfil de Datos Genérico (Freq-Q-Gain vía Navegación por Teclado)",
-                "tech_title": "Lógica Avanzada de Filtros",
-                "tech_desc": "No solo copiamos números a ciegas. <strong>RewEQTransferAssistant</strong> traduce los datos matemáticos puros de REW en factores Q precisos para tu DSP:",
-                "tech_li1": "<strong>High Shelf (HS) y Low Shelf (LS):</strong> El factor Q se calcula dinámicamente según la pendiente por defecto de REW (S=0.9) y la Ganancia exportada, asegurando la misma curva.",
-                "tech_li2": "<strong>High Pass (HP) y Low Pass (LP):</strong> El software aplica el valor Q matemáticamente correcto según la alineación de Crossover elegida (ej. Butterworth = 0.7071).",
-                "tech_li3": "<strong>Filtros Peak (PK):</strong> Los parámetros Q y Ganancia se mantienen y formatean perfectamente según el perfil de DSP elegido.",
-                "community_title": "¿Necesitas un Perfil para tu DSP?",
-                "community_desc": "Estamos añadiendo constantemente nuevos perfiles. Si tienes un DSP específico que aún no es compatible, ¡avísanos en GitHub!",
-                "btn_request": "Solicitar nuevo Perfil de DSP"
+            'es': {
+                flag: '🇪🇸',
+                text: 'ES',
+                video: 'https://www.youtube.com/embed/_9gR5eyZoWA?autoplay=0&rel=0',
+                caption: '<i class="fa-solid fa-circle-info mr-1"></i> Mira cómo el asistente transfiere los datos de EQ en segundos.'
             }
         };
 
         function setLanguage(lang) {
-            if (!translations[lang]) lang = "en";
-            const t = translations[lang];
+            // Update UI elements
+            document.getElementById('current-lang-flag').textContent = langData[lang].flag;
+            document.getElementById('current-lang-text').textContent = langData[lang].text;
             
-            document.title = t.title;
-            document.querySelector('meta[name="description"]').setAttribute("content", t.desc);
-            document.documentElement.lang = lang;
+            // Update Video
+            document.getElementById('video-frame').src = langData[lang].video;
             
-            document.getElementById("nav-features").innerText = t.features;
-            document.getElementById("hero-badge").innerText = t.hero_badge;
-            document.getElementById("hero-t1").innerHTML = t.hero_title_1 + "<br>";
-            document.getElementById("hero-t2").innerText = t.hero_title_2;
-            document.getElementById("hero-desc").innerText = t.hero_desc;
+            // Update Caption
+            document.getElementById('video-caption').innerHTML = langData[lang].caption;
             
-            document.getElementById("btn-dl-light").innerText = t.dl_light;
-            document.getElementById("btn-dl-light-sub").innerText = t.dl_light_sub;
-            document.getElementById("btn-dl-full").innerText = t.dl_full;
-            document.getElementById("btn-dl-full-sub").innerText = t.dl_full_sub;
-            
-            document.getElementById("btn-support-text").innerText = t.support_btn;
-            document.getElementById("req-text").innerText = t.req_text;
-            
-            document.getElementById("feat-title").innerText = t.features_title;
-            document.getElementById("f1-title").innerText = t.f1_title;
-            document.getElementById("f1-desc").innerText = t.f1_desc;
-            document.getElementById("f2-title").innerText = t.f2_title;
-            document.getElementById("f2-desc").innerText = t.f2_desc;
-            document.getElementById("f3-title").innerText = t.f3_title;
-            document.getElementById("f3-desc").innerText = t.f3_desc;
-            
-            document.getElementById("time-saved-title").innerText = t.time_saved_title;
-            document.getElementById("time-saved-desc").innerText = t.time_saved_desc;
-            
-            document.getElementById("supported-title").innerText = t.supported_title;
-            document.getElementById("supported-desc").innerText = t.supported_desc;
-            document.getElementById("supported-generic").innerText = t.supported_generic;
-            
-            document.getElementById("tech-title").innerText = t.tech_title;
-            document.getElementById("tech-desc-1").innerHTML = t.tech_desc;
-            document.getElementById("tech-li-1").innerHTML = t.tech_li1;
-            document.getElementById("tech-li-2").innerHTML = t.tech_li2;
-            document.getElementById("tech-li-3").innerHTML = t.tech_li3;
-            
-            document.getElementById("community-title").innerText = t.community_title;
-            document.getElementById("community-desc").innerText = t.community_desc;
-            document.getElementById("btn-request").innerText = t.btn_request;
-            
-            document.getElementById("created-by").innerText = t.created_by;
-            document.getElementById("license-text").innerText = t.license;
+            // Save preference to localStorage so it remembers next time
+            localStorage.setItem('preferredLang', lang);
         }
 
-        window.onload = () => {
-            let userLang = 'en';
-            if (navigator.languages && navigator.languages.length) {
-                userLang = navigator.languages[0].split('-')[0];
-            } else {
-                userLang = (navigator.language || navigator.userLanguage).split('-')[0];
+        // Auto-detect language on load
+        window.addEventListener('DOMContentLoaded', (event) => {
+            // Check if user has a saved preference first
+            let lang = localStorage.getItem('preferredLang');
+            
+            if (!lang) {
+                // If no preference, detect browser language
+                const browserLang = navigator.language || navigator.userLanguage; 
+                if (browserLang.toLowerCase().includes('pt')) {
+                    lang = 'pt';
+                } else if (browserLang.toLowerCase().includes('es')) {
+                    lang = 'es';
+                } else {
+                    lang = 'en'; // Default to English
+                }
             }
-            setLanguage(userLang);
-        };
+            
+            // Apply language
+            setLanguage(lang);
+        });
     </script>
 </body>
 </html>
